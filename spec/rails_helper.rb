@@ -71,6 +71,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<app_id>') { ENV['edamam_app_id'] }
   config.filter_sensitive_data('<app_key>') { ENV['edamam_app_key'] }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
 
 Shoulda::Matchers.configure do |config|

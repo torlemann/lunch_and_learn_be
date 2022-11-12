@@ -1,9 +1,13 @@
 class EdamamFacade
     def self.get_recipes(country)
         json = EdamamService.get_recipes(country)
-        recipes_data = json.shuffle
-        recipes = recipes_data.map do |recipe_data|
-            Recipe.new(recipe_data, country)
+        # recipes_data = json
+        if json[:hits].nil?
+            recipes = []
+        else
+            recipes = json[:hits].map do |recipe_data|
+                Recipe.new(recipe_data, country)
+            end
         end
     end
 end
