@@ -24,5 +24,8 @@ RSpec.describe Country do
     }
 
     country = Country.new(attrs)
+    expect(country).to be_a Country
+    expect(country.common_name).to eq('Mauritania')
   end
+  
 end
