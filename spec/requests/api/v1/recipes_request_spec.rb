@@ -49,7 +49,7 @@ RSpec.describe 'recipe API requests' do
     expect(recipes[:data][0][:attributes][:url]).to be_a String
   end
 
-  it 'returns empty array if there are no recipes from specified country' do 
+  it 'returns empty array if there are no recipes from specified country', :vcr do 
     get '/api/v1/recipes?country=Wallis and Futuna'
     
     expect(response.status).to eq(200)
