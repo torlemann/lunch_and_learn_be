@@ -1,7 +1,7 @@
 class EdamamFacade
     def self.get_recipes(country)
         json = EdamamService.get_recipes(country)
-        if json[:hits].nil?
+        if json[:hits].empty?
             recipes = []
         else
             recipes = json[:hits].map do |recipe_data|
