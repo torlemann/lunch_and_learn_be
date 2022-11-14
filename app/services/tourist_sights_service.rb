@@ -1,12 +1,14 @@
 class TouristSightsService
     
     def self.get_country(country)
-        response = conn.get("/v3.1/name/#{country}?fullText=true&fields=latlng")
+        response = conn_country.get("/v3.1/name/#{country}?fullText=true&fields=latlng")
         JSON.parse(response.body, symbolize_names: true)
     end
 
     def self.get_sights(lng, lat)
-        response = conn.get("/v2/places?categories=tourism.sights&limit=20&apiKey=#{ENV['geoapify_key']}&filter=circle:#{lng,lat},20000")
+        long = lng
+        lati = lat
+        response = conn_sights.get("/v2/places?categories=tourism.sights&limit=20&apiKey=#{ENV['geoapify_key']}&filter=circle:#{long},#{lati},20000")
         JSON.parse(response.body, symbolize_names: true)
     end
 

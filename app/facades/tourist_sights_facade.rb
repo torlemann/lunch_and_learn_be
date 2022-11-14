@@ -4,6 +4,7 @@ class TouristSightsFacade
         capital_lng_lat = country_json.map do |country_data|
             CapitalInfo.new(country_data)
         end
+        capital, lng, lat = [capital_lng_lat[0], capital_lng_lat[2], capital_lng_lat[1]]
     end
 
     def self.get_sights(lng, lat)
