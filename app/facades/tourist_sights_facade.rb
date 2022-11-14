@@ -6,4 +6,9 @@ class TouristSightsFacade
         end
         capital_info
     end
+
+    def self.get_sights(lng, lat)
+        sights_json = TouristSightsService.get_sights(lng, lat)
+        sights = TouristSights.new(sights_json)
+    end
 end
