@@ -6,7 +6,7 @@ RSpec.describe 'tourist sights API requests' do
     
     expect(response.status).to eq(200)
 
-    recipes = JSON.parse(response.body, symbolize_names: true)
-   
+    sights = JSON.parse(response.body, symbolize_names: true)
+   binding.pry
   end
 end

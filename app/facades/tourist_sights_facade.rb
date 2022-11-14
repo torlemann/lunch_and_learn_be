@@ -9,6 +9,8 @@ class TouristSightsFacade
 
     def self.get_sights(lng, lat)
         sights_json = TouristSightsService.get_sights(lng, lat)
-        sights = TouristSights.new(sights_json)
+        sights = sights_json[:features].map do |sight_data|
+            TouristSights.new(sight_data)
+        end
     end
 end
