@@ -4,8 +4,17 @@ RSpec.describe 'favorites request spec' do
   it 'creates favorites', :vcr do 
     VCR.eject_cassette
     VCR.turn_off!
+    user_params = { 
+      email: "smoochy@gmail.com",
+      name: "Robin"
+    }
+
+    post '/api/v1/users',  params: user_params
+
+    new_user = User.last
+
     favorites_params = {
-      "api_key": "jgn983hy48thw9begh98h4539h4",
+      "api_key": new_user.api_key,
       "country": "thailand",
       "recipe_link": "https://www.tastingtable.com/.....",
       "recipe_title": "Crab Fried Rice (Khaao Pad Bpu)"
