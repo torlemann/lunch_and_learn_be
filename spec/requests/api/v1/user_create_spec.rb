@@ -18,6 +18,5 @@ RSpec.describe 'Creating a User' do
     expect(user_json[:data][:attributes][:email]).to be_a String
     expect(user_json[:data][:attributes][:api_key]).to be_a String
     expect(user_json[:data][:attributes][:name]).to be_a String
-    binding.pry
   end
 end
