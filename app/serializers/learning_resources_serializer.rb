@@ -1,12 +1,13 @@
 class LearningResourcesSerializer
-    def self.format(video, country)
+    def self.format(video, images, country)
         {
             "data": {
                 "id": nil,
                 "type": "learning_resource",
                 "attributes": {
                     "country": country,
-                    "video": video
+                    "video": video,
+                    "images": images
                 }
             }
         }

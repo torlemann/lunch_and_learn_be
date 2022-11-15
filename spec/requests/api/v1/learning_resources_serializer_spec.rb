@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'learning resource API requests' do
-  it 'returns empty array for country without an exact Mr History video match', :vcr do 
+  it 'returns empty video array for country without an exact Mr History video match', :vcr do 
     get '/api/v1/learning_resources?country=thailand'
     
     expect(response.status).to eq(200)
@@ -15,5 +15,6 @@ RSpec.describe 'learning resource API requests' do
     expect(resource[:data][:attributes]).to have_key :country
     expect(resource[:data][:attributes]).to have_key :video
     expect(resource[:data][:attributes][:video]).to eq ([])
+    expect(resource[:data][:attributes][:images]).to be_an Array
   end
 end
