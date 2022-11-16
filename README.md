@@ -25,9 +25,19 @@ Created with Rails 5.2.8
 
 ## Table of contents
 
+- [Learning Goals](#learning-goals)
 - [Database setup](#database-setup)
 - [Endpoints](#endpoints)
 - [Query parameters](#query-params)
+
+## <a name="learning-goals"></a>Learning Goals
+
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Test both API consumption and exposure, making use of at least one mocking tool (VCR, Webmock, etc).
+
 
 ## <a name="database-setup"></a>Database Setup
 <img width="540" alt="Screen Shot 2022-11-15 at 7 40 39 PM" src="https://user-images.githubusercontent.com/106449394/202079611-b2fe81b1-71e8-4408-b132-1ad153b79ff2.png">
