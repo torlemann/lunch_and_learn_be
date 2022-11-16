@@ -103,7 +103,7 @@ RSpec.describe 'favorites request spec' do
       expect(json[:data][0][:attributes][:created_at]).to be_a String
     end
 
-    it "sad path returns error with invalid api key", :vcr do
+    it "returns empty array if user has no favorites", :vcr do
       user_params = { 
         email: "smoochy@gmail.com",
         name: "Robin"
@@ -124,6 +124,20 @@ RSpec.describe 'favorites request spec' do
       expect(response).to be_successful
       expect(json).to be_a Hash
       expect(json[:data]).to eq([])
+    end
+
+    it "sad path returns error with invalid api key", :vcr do
+      favorites_request_params = {
+        "api_key": "cnakjdlajdlajdla"
+      }
+
+      get '/api/v1/favorites', params: favorites_request_params
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to_not be_successful
+      expect(json).to be_a Hash
+      expect(json[:error]).to eq( "Unable to find user by API key. A valid API key must be provided to create favorite.")
     end
   end
 end
