@@ -28,7 +28,6 @@ Created with Rails 5.2.8
 - [Learning Goals](#learning-goals)
 - [Database setup](#database-setup)
 - [Endpoints](#endpoints)
-- [Query parameters](#query-params)
 
 ## <a name="learning-goals"></a>Learning Goals
 
