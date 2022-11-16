@@ -30,6 +30,7 @@ Created with Rails 5.2.8
 - [Query parameters](#query-params)
 
 ## <a name="database-setup"></a>Database Setup
+<img width="540" alt="Screen Shot 2022-11-15 at 7 40 39 PM" src="https://user-images.githubusercontent.com/106449394/202079611-b2fe81b1-71e8-4408-b132-1ad153b79ff2.png">
 
 Fork and clone the project, then install the required gems with `bundle`. 
 
